@@ -1,48 +1,25 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-        calculate();
-    }
-
-    public static void calculate() {
         Scanner scan = new Scanner(System.in);
+        ArrayList<String> notes = new ArrayList<>();
 
-        System.out.print("Введите первое число: ");
-        double num1 = scan.nextDouble();
+        while (true) {
+            System.out.print("Введите заметку: ");
+            String note = scan.nextLine();
 
-        System.out.print("Введите второе число: ");
-        double num2 = scan.nextDouble();
 
-        System.out.print("Введите действие (+, -, *, /): ");
-        char operator = scan.next().charAt(0);
+            notes.add(note);
 
-        double result;
-
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                if (num2 != 0) 
-                    result = num1 / num2;
-                 else {
-                    System.out.println("Ошибка: деление на ноль");
-                    return;
+            if (note.contains("0")) {
+                System.out.println("Заметки:");
+                for (int i = 0; i < notes.size(); i++) {
+                    System.out.println(notes.get(i));
                 }
                 break;
-            default:
-                System.out.println("Неизвестная операция");
-                return;
+            }
         }
-
-        System.out.println("Результат: " + result);
     }
 }

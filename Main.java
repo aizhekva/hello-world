@@ -1,8 +1,14 @@
 import java.util.Scanner;
 
-public class Main{
-    public static void main(String[] args){
+public class Main {
+
+    public static void main(String[] args) {
+        calculate();
+    }
+
+    public static void calculate() {
         Scanner scan = new Scanner(System.in);
+
         System.out.print("Введите первое число: ");
         double num1 = scan.nextDouble();
 
@@ -27,7 +33,7 @@ public class Main{
             case '/':
                 if (num2 != 0) 
                     result = num1 / num2;
-                else {
+                 else {
                     System.out.println("Ошибка: деление на ноль");
                     return;
                 }
@@ -40,5 +46,3 @@ public class Main{
         System.out.println("Результат: " + result);
     }
 }
-
-
